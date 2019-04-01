@@ -45,10 +45,13 @@ def submit_vcode(request):
 
 def get_profile(request):
     """获取个人资料"""
-    return
+    uid = request.session['uid']
+    user = User.objects.get(id=uid)
+    return render_json(user.profile.to_dict())
 
 def edit_profile(request):
     """修改个人资料"""
+
     return
 
 def upload_avatar(request):
