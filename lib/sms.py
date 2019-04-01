@@ -2,7 +2,10 @@
 import random
 import requests
 
+from django.core.cache import cache
+
 from swiper import config
+from common import keys
 
 
 def gen_vcode(length=4):
@@ -12,6 +15,8 @@ def gen_vcode(length=4):
 
 def send_sms(phonenum):
     vcode = gen_vcode()
+    # 把验证码加入缓存，缓存180秒
+    cache.set(keys.VCODE_KEY %(phonenum), str(vcode), 180)
     url = config.YZX_SMS_API
     params = config.YZX_SMS_PARAMS.copy()
     params['param'] = vcode
