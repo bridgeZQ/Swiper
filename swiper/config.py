@@ -12,3 +12,9 @@ YZX_SMS_PARAMS = {
      "param": None,
      "mobile": None,
 }
+
+# 七牛云配置
+QN_ACCESS_KEY = 'B9TlQdWYREuT_Z8LyT3h35C6hV7LlFXDpZG2THRx'
+QN_SECRET_KEY = 'bXAfnuOoBcC6qQf3W7l5q66yJwncozlQcbehVjNi'
+QN_BUCKET_NAME = 'swiper'
+QN_CLOUD_URL = 'http://ppd4wuy6o.bkt.clouddn.com'
